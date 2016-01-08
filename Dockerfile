@@ -12,3 +12,5 @@ npm install -g npm@latest && \
 # cleanup 
 apt-get clean && rm -rf /tmp/* /var/lib/apt/lists/* /var/tmp/*
 
+ADD 21.update_npm.sh /etc/my_init.d/
+RUN chmod +x -v /etc/my_init.d/*.sh
