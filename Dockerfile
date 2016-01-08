@@ -2,10 +2,11 @@ FROM linuxserver/baseimage
 
 MAINTAINER Sparklyballs <sparklyballs@linuxserver.io>
 
-ENV BASE_APTLIST="build-essential git-core libssl-dev nodejs"
+ENV BASE_APTLIST="build-essential git-core libssl-dev nodejs python"
 
 # install packages
-RUN curl -sL https://deb.nodesource.com/setup_5.x | bash - && \
+RUN add-apt-repository ppa:fkrull/deadsnakes-python2.7 && \
+curl -sL https://deb.nodesource.com/setup_5.x | bash - && \
 apt-get install $BASE_APTLIST -qy && \
 npm install -g npm@latest && \
 
